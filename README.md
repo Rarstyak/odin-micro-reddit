@@ -22,3 +22,35 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Assignment
+
+Create a micro reddit with users and posts
+
+## User Model
+username [unique, 4-12 chars, present]
+email [unique, present]
+password [6-16 chars, present]
+
+has_many posts
+
+## Post Model
+title [unique, present]
+body [present]
+user_id [present]
+
+belongs_to user
+
+===
+bin/rails g model User
+bin/rails g migration AddUsernameToUsers username:string
+bin/rails g migration AddEmailToUsers email:string
+bin/rails g migration AddPasswordToUsers password:string
+
+bin/rails g model Post  
+bin/rails g migration AddTitleToPosts title:string
+bin/rails g migration AddBodyToPosts body:text
+bin/rails g migration AddUserRefToPosts user:references
+
+bin/rails db:migrate
+===
