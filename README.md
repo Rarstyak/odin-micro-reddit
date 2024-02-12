@@ -41,6 +41,13 @@ user_id [present]
 
 belongs_to user
 
+## Comment Model
+body [present]
+user_id [present]
+belongs_to user
+
+belongs_to post
+
 ===
 bin/rails g model User
 bin/rails g migration AddUsernameToUsers username:string
@@ -54,3 +61,5 @@ bin/rails g migration AddUserRefToPosts user:references
 
 bin/rails db:migrate
 ===
+
+Next step: Add in commenting
