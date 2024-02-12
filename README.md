@@ -60,6 +60,10 @@ bin/rails g migration AddBodyToPosts body:text
 bin/rails g migration AddUserRefToPosts user:references
 
 bin/rails db:migrate
+
+bin/rails g model Comment title:string body:text user:references post:references
+
+bin/rails db:migrate
 ===
 
 Next step: Add in commenting
